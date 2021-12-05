@@ -28,9 +28,6 @@ const hideOnboardingCard = () => {
     display:"none",
     ease: "power3.inOut"
   });
-  setTimeout(() => {
-    onboardCard.style.display = none;
-  },0);
 };
 
 
