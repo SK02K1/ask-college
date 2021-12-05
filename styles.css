@@ -111,3 +111,34 @@ label {
 .hide {
     display: none;
 }
+
+.main-wrapper {
+    width: 70%;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.6rem;
+    transition: all 200ms ease-in-out;
+}
+
+.logo:hover {
+    transform: rotate(10deg) scale(1.2);
+    cursor: pointer;
+}
+
+main {
+    height: 20vh;
+    background: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

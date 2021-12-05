@@ -1,15 +1,15 @@
 import { hideLoader, showLoader } from "./loader.js";
 import { showOnboadingCard, hideOnboardingCard } from "./onboarding.js"
-import {formUserInfo, body} from "./refs.js"
+import {formUserInfo} from "./refs.js"
 import { storeUserInfo } from "./userinfo.js";
-import { showWelcomeMsg } from "./welcome.js";
+import { showMainContent } from "./mainContent.js";
 
 if (localStorage.username && localStorage.college) {
     showLoader();
     setTimeout(() => {
         hideLoader();
         setTimeout(() => {
-            showWelcomeMsg(localStorage.username);
+            showMainContent();
         }, 0);
     },1200);
 } else {
@@ -28,7 +28,7 @@ if (localStorage.username && localStorage.college) {
                 setTimeout(() => {
                     hideLoader();
                     setTimeout(() => {
-                        showWelcomeMsg(localStorage.username);
+                        showMainContent();
                     }, 2200);
                 }, 0)
             }, 1200);
