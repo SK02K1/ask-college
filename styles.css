@@ -27,6 +27,7 @@ label {
 }
 
 .header-secondary {
+    text-align: center;
     font-weight: 600;
     font-size: 2.4rem;
 }
@@ -76,10 +77,14 @@ label {
 }
 
 #form-user-info {
+    background: palevioletred;
     color: white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 50%;
+    height: 80%;
+    padding: 1.5rem;
 }
 
 .input {
