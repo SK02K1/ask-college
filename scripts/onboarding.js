@@ -1,5 +1,4 @@
-const onboardCard = document.querySelector(".onboard-container");
-const imgOnboard = document.querySelector("#img-onboard");
+import { onboardCard, imgOnboard } from "./refs.js";
 
 const showOnboadingCard = () => {
   onboardCard.style.display = "flex";
@@ -21,7 +20,18 @@ const showOnboadingCard = () => {
 
 };
 
+const hideOnboardingCard = () => {
+  gsap.to(onboardCard, 2, {
+    opacity: 0,
+    y: -100,
+    duration: 1,
+    display:"none",
+    ease: "power3.inOut"
+  });
+};
+
 
 export {
-  showOnboadingCard
+  showOnboadingCard,
+  hideOnboardingCard
 };

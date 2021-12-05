@@ -1,4 +1,4 @@
-const mainLoader = document.querySelector(".main-loader");
+import {mainLoader} from  "./refs.js"
 
 const hideLoader = () => {
     mainLoader.style.display = "none";
