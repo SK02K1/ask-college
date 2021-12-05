@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <title>askCollege</title>
 </head>
 
 <body>
 
-    <div class="onboard-container">
+    <div class=" main-loader loader-container hide">
+        <div class="loader-wrapper">
+            <lottie-interactive class="loader center" path="./assets/lottie/loader.json" autoplay loop>
+                <lottie-interactive>
+        </div>
+    </div>
+
+    <div class="onboard-container center">
         <img src="./assets/robot.svg" alt="robot" id="img-onboard">
         <form id="form-user-info">
             <h2 class="header-secondary">Enter your details</h2>
@@ -25,6 +31,13 @@
         </form>
     </div>
 
+
+    <script type="text/javascript" src="https://unpkg.com/lottie-interactive@latest/dist/lottie-interactive.js">
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script>
@@ -40,6 +53,7 @@
         const db = firebase.firestore();
     </script>
 
+    <script src="./scripts/onboarding.js"></script>
     <script src="./scripts/app.js"></script>
 
 </body>
