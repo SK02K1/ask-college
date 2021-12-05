@@ -5,14 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <title>askCollege</title>
 </head>
 
 <body>
 
-    <h1>askCollege</h1>
+    <div class="onboard-container">
+        <img src="./assets/robot.svg" alt="robot" id="img-onboard">
+        <form id="form-user-info">
+            <h2 class="header-secondary">Enter your details</h2>
+            <label for="username">username</label>
+            <input class="input" type="text" name="username" placeholder="Enter your name" required>
+            <label for="college">college</label>
+            <input class="input" type="text" name="college" placeholder="Enter college name" required>
+            <button class="btn btn-primary">submit</button>
+        </form>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
