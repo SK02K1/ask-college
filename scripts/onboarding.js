@@ -1,25 +1,27 @@
 const onboardCard = document.querySelector(".onboard-container");
-const mainLoader = document.querySelector(".main-loader");
-
+const imgOnboard = document.querySelector("#img-onboard");
 
 const showOnboadingCard = () => {
   onboardCard.style.display = "flex";
   gsap.from(onboardCard, {
-    opacity: 0, 
-    y: 100, 
+    opacity: 0,
+    y: 100,
     duration: 1,
     ease: "power3.inOut"
-  });   
+  });
+
+  gsap.fromTo(imgOnboard, {
+    y: -30, ease: "power4.out"
+  }, {
+    y: 20,
+    duration: 2,
+    yoyo: true,
+    repeat: -1
+  });
+
 };
 
-const toggleLoadingState = () => {
-  mainLoader.classList.toggle("hide");
+
+export {
+  showOnboadingCard
 };
-
-
-
-toggleLoadingState();
-setTimeout(() => {
-toggleLoadingState();
-showOnboadingCard();
-}, 2000 );

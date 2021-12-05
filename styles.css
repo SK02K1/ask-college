@@ -54,9 +54,7 @@ label {
     color: white;
 }
 
-.hide {
-    display: none;
-}
+
 
 .onboard-container {
     width: 60%;
@@ -68,7 +66,6 @@ label {
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.50), 0 6px 6px rgba(0, 0, 0, 0.05);
-    display: none;
 }
 
 .onboard-container img {
@@ -108,4 +105,8 @@ label {
     width: 5%;
     height: auto;
     transition: all 600ms ease-in-out;
+}
+
+.hide {
+    display: none;
 }
