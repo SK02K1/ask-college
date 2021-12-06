@@ -1,8 +1,9 @@
 import { hideLoader, showLoader } from "./loader.js";
 import { showOnboadingCard, hideOnboardingCard } from "./onboarding.js"
-import {formUserInfo} from "./refs.js"
+import {formUserInfo, btnAsk, btnClose} from "./refs.js"
 import { storeUserInfo } from "./userinfo.js";
 import { showMainContent } from "./mainContent.js";
+import { showQuesBox, hideQuesBox } from "./quesBox.js";
 
 
 
@@ -38,6 +39,14 @@ if (localStorage.username && localStorage.college) {
     }, 3000);
 }
 
+
+btnAsk.addEventListener("click", () => {
+    showQuesBox()
+});
+
+btnClose.addEventListener("click", () => {
+    hideQuesBox();
+});
 
 
 
