@@ -1,11 +1,12 @@
 import { hideLoader, showLoader } from "./loader.js";
 import { showOnboadingCard, hideOnboardingCard } from "./onboarding.js"
-import {formUserInfo, btnAsk, btnClose, formAskQues, btnYourQueries, btnHelpOtherFolks} from "./refs.js"
+import {formUserInfo, btnAsk, btnCloseAsk, formAskQues, btnYourQueries, btnHelpOtherFolks, queriesContainer, btnCloseComment, formAddComment} from "./refs.js"
 import { storeUserInfo } from "./userinfo.js";
 import { getQueries, showMainContent, unsub, clearQueries} from "./mainContent.js";
 import { showQuesBox, hideQuesBox, submitQues } from "./quesBox.js";
+import { showCommentBox, hideCommentBox, addComment } from "./comments.js";
 
-
+let id;
 
 if (localStorage.username && localStorage.college) {
     showLoader();
@@ -44,7 +45,7 @@ btnAsk.addEventListener("click", () => {
     showQuesBox()
 });
 
-btnClose.addEventListener("click", () => {
+btnCloseAsk.addEventListener("click", () => {
     hideQuesBox();
 });
 
@@ -63,5 +64,17 @@ btnYourQueries.addEventListener("click", (e) => {
     getQueries("Your queries", "==")
 });
 
+queriesContainer.addEventListener("click", (e) => {
+    if(e.target.classList.contains("btn-add-comment")){
+         id = e.target.parentElement.parentElement.getAttribute("data-id");
+        showCommentBox();
+    }
+});
+
+btnCloseComment.addEventListener("click", () => {
+    hideCommentBox();
+});
+
+formAddComment.addEventListener("submit", (e) => addComment(e, id));
 
 
