@@ -6,5 +6,6 @@ const mainWrapper = document.querySelector(".main-wrapper");
 const formAskQues = document.querySelector("#form-ask-ques");
 const btnAsk = document.querySelector(".btn-ask");
 const btnClose = document.querySelector(".btn-close");
+const queriesContainer = document.querySelector(".queries-container");
 
-export {formUserInfo, mainLoader, onboardCard, imgOnboard, mainWrapper, formAskQues, btnAsk, btnClose};
+export {formUserInfo, mainLoader, onboardCard, imgOnboard, mainWrapper, formAskQues, btnAsk, btnClose, queriesContainer};

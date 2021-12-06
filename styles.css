@@ -20,6 +20,11 @@ label {
     margin: .2rem 0rem;
 }
 
+small {
+    display: block;
+    color: gray;
+}
+
 .header-primary {
     text-align: center;
     margin: 1rem 0rem;
@@ -54,7 +59,10 @@ label {
     color: white;
 }
 
-
+.highlight {
+    font-weight: 600;
+    color: black;
+}
 
 .onboard-container {
     width: 60%;
@@ -130,14 +138,6 @@ label {
     cursor: pointer;
 }
 
-main {
-    height: 20vh;
-    background: orangered;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #form-ask-ques-wrapper {
     position: relative;
 }
@@ -163,6 +163,28 @@ main {
     margin: 1rem 0rem;
     padding: .5rem;
     cursor: pointer;
+}
+
+.queries-container {
+    padding: 1.2rem;    
+}
+
+.query-card {
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+    margin: 1rem auto;
+    padding: .5rem;
+    width: 50%;
+}
+
+.query {
+    color: var(--blue);
+    margin: .5rem 0rem;
+}
+
+.user-info {
+    border-bottom: 1px solid gray;
+    padding: 0 0 .5rem 0;
 }
 
 .hide {
