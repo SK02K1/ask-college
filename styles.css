@@ -150,7 +150,7 @@ small {
     position: relative;
 }
 
-#form-ask-ques {
+#form-ask-ques, #form-add-comment {
     background: var(--blue);
     width: 40%;
     z-index: 1;
@@ -162,11 +162,11 @@ small {
     position: absolute;
 }
 
-#form-ask-ques textarea {
+textarea {
     padding: 1rem;
 }
 
-.btn-close {
+.btn-close-ask, .btn-close-comment {
     align-self: flex-end;
     margin: 1rem 0rem;
     padding: .5rem;
@@ -203,4 +203,15 @@ small {
     background: #eee;
     margin: 1rem 0rem;
     padding: .5rem;
+}
+
+.query-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-add-comment {
+    font-size: 1.4rem;
+    cursor: pointer;
 }
