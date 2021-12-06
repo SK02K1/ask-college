@@ -4,6 +4,8 @@ import {formUserInfo} from "./refs.js"
 import { storeUserInfo } from "./userinfo.js";
 import { showMainContent } from "./mainContent.js";
 
+
+
 if (localStorage.username && localStorage.college) {
     showLoader();
     setTimeout(() => {
@@ -35,4 +37,7 @@ if (localStorage.username && localStorage.college) {
         });
     }, 3000);
 }
+
+
+
 
