@@ -20,6 +20,11 @@ label {
     margin: .2rem 0rem;
 }
 
+small {
+    display: block;
+    color: gray;
+}
+
 .header-primary {
     text-align: center;
     margin: 1rem 0rem;
@@ -54,7 +59,10 @@ label {
     color: white;
 }
 
-
+.highlight {
+    font-weight: 600;
+    color: black;
+}
 
 .onboard-container {
     width: 60%;
@@ -120,6 +128,10 @@ label {
     align-items: center;
 }
 
+.navbar button {
+    margin: 0rem .5rem;
+}
+
 .logo {
     font-size: 2.6rem;
     transition: all 200ms ease-in-out;
@@ -128,14 +140,6 @@ label {
 .logo:hover {
     transform: rotate(10deg) scale(1.2);
     cursor: pointer;
-}
-
-main {
-    height: 20vh;
-    background: orangered;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #form-ask-ques-wrapper {
@@ -163,6 +167,28 @@ main {
     margin: 1rem 0rem;
     padding: .5rem;
     cursor: pointer;
+}
+
+.queries-container {
+    padding: 1.2rem;    
+}
+
+.query-card {
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+    margin: 1rem auto;
+    padding: .5rem;
+    width: 50%;
+}
+
+.query {
+    color: var(--blue);
+    margin: .5rem 0rem;
+}
+
+.user-info {
+    border-bottom: 1px solid gray;
+    padding: 0 0 .5rem 0;
 }
 
 .hide {
