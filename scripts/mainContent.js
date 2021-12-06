@@ -36,19 +36,6 @@ const showQuery = ({username, college, query, created_at, comments}, id) => {
 };
 
 
-/*
-<div class="user-info">
-          <small class="highlight">${username}</small>
-        <small>
-          <span class="highlight">college: </span>${college}
-        </small>
-        </div>
-        <div class="comment">${comment}</div>
-    <small>
-    ${dateFns.distanceInWordsToNow(new Date(commented_at.toDate()), { addSuffix: true })}
-    </small>
-*/
-
 
 const clearQueries = () => {
   queriesContainer.innerHTML = "";
