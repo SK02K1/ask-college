@@ -1,9 +1,9 @@
 import { hideLoader, showLoader } from "./loader.js";
 import { showOnboadingCard, hideOnboardingCard } from "./onboarding.js"
-import {formUserInfo, btnAsk, btnClose} from "./refs.js"
+import {formUserInfo, btnAsk, btnClose, formAskQues} from "./refs.js"
 import { storeUserInfo } from "./userinfo.js";
 import { showMainContent } from "./mainContent.js";
-import { showQuesBox, hideQuesBox } from "./quesBox.js";
+import { showQuesBox, hideQuesBox, submitQues } from "./quesBox.js";
 
 
 
@@ -48,5 +48,6 @@ btnClose.addEventListener("click", () => {
     hideQuesBox();
 });
 
+formAskQues.addEventListener("submit", submitQues);
 
 
