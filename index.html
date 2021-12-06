@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>askCollege</title>
 </head>
@@ -31,7 +32,25 @@
         </form>
     </div>
 
+    <div class="form-ask-ques-wrapper hide ">
+        <form id="form-ask-ques" class="center " >
+            <i class="fas fa-times btn-close"></i>
+            <textarea cols="30" rows="10" placeholder="Enter your query" name="query" required></textarea>
+            <button class="btn btn-primary" >submit</button>
+        </form>
+    </div>
 
+    <div class="main-wrapper hide ">
+        <nav class="navbar">
+            <div class="logo">🧠</div>
+            <button class="btn btn-primary btn-ask">ask</button>
+        </nav>
+        <main>welcome</main>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/08b9929a7c.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="text/javascript" src="https://unpkg.com/lottie-interactive@latest/dist/lottie-interactive.js">
     </script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
