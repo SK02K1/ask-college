@@ -17,8 +17,8 @@ const showQuery = ({username, college, query, created_at, comments}, id) => {
     ${dateFns.distanceInWordsToNow(new Date(created_at.toDate()), { addSuffix: true })}
     </small>
     <div class="comments-container">
-    <h3>${comments.length > 0 ? "comments 👇" : ""}</h3>
-      ${comments.length > 0 ? comments.map(({username, college, comment, commented_at}) => {
+    <small class="highlight">${ comments !== undefined  ? "comments 👇" : ""}</small >
+      ${comments !== undefined ? comments.map(({username, college, comment, commented_at}) => {
         return `
         <div class="comment-card">
           <div class="user-info">
