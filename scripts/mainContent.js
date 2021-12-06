@@ -42,7 +42,7 @@ const clearQueries = () => {
 }
 
 
-const getQueries = (heading="your queries", check="==") => {
+const getQueries = (heading="Your queries", check="==") => {
   mainHeader.textContent = heading;
   unsub = db.collection("queries").where("username", check, localStorage.username).onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
