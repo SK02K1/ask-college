@@ -1,6 +1,7 @@
-import { mainWrapper } from "./refs.js";
-import { queriesContainer } from "./refs.js";
+import { mainWrapper, queriesContainer, mainHeader } from "./refs.js";
 
+
+let unsub;
 
 const showQuery = ({username, college, query, created_at}, id) => {
  queriesContainer.innerHTML += `
@@ -19,9 +20,24 @@ const showQuery = ({username, college, query, created_at}, id) => {
  `;
 };
 
+// const getQueriesWhere = (where) => {
+//   db.collection("queries").orderBy("created_at").onSnapshot((snapshot) => {
+//     snapshot.docChanges().forEach((change) => {
+//       if(change.type === "added"){
+//         showQuery(change.doc.data(), change.doc.id);
+//       }
+//     });
+// });
+// }
 
-const getQueries = () => {
-  db.collection("queries").orderBy("created_at").onSnapshot((snapshot) => {
+const clearQueries = () => {
+  queriesContainer.innerHTML = "";
+}
+
+
+const getQueries = (heading="your queries", check="==") => {
+  mainHeader.textContent = heading;
+  unsub = db.collection("queries").where("username", check, localStorage.username).onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       if(change.type === "added"){
         showQuery(change.doc.data(), change.doc.id);
@@ -43,4 +59,4 @@ const showMainContent = () => {
     }, 0);
 };
 
-export {showMainContent};
+export {showMainContent, getQueries, unsub, clearQueries};

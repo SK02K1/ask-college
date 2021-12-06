@@ -1,8 +1,8 @@
 import { hideLoader, showLoader } from "./loader.js";
 import { showOnboadingCard, hideOnboardingCard } from "./onboarding.js"
-import {formUserInfo, btnAsk, btnClose, formAskQues} from "./refs.js"
+import {formUserInfo, btnAsk, btnClose, formAskQues, btnYourQueries, btnHelpOtherFolks} from "./refs.js"
 import { storeUserInfo } from "./userinfo.js";
-import { showMainContent } from "./mainContent.js";
+import { getQueries, showMainContent, unsub, clearQueries} from "./mainContent.js";
 import { showQuesBox, hideQuesBox, submitQues } from "./quesBox.js";
 
 
@@ -49,6 +49,19 @@ btnClose.addEventListener("click", () => {
 });
 
 formAskQues.addEventListener("submit", submitQues);
+
+
+btnHelpOtherFolks.addEventListener("click", (e) => {
+    unsub();
+    clearQueries();
+    getQueries("Help other folks", "!=")
+});
+
+btnYourQueries.addEventListener("click", (e) => {
+    unsub();
+    clearQueries();
+    getQueries("Your queries", "==")
+});
 
 
 

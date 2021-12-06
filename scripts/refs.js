@@ -7,5 +7,21 @@ const formAskQues = document.querySelector("#form-ask-ques");
 const btnAsk = document.querySelector(".btn-ask");
 const btnClose = document.querySelector(".btn-close");
 const queriesContainer = document.querySelector(".queries-container");
+const btnYourQueries = document.querySelector(".btn-your-queries");
+const btnHelpOtherFolks = document.querySelector(".btn-help-other-folks");
+const mainHeader = document.querySelector(".main-header");
 
-export {formUserInfo, mainLoader, onboardCard, imgOnboard, mainWrapper, formAskQues, btnAsk, btnClose, queriesContainer};
+export {
+    formUserInfo,
+    mainLoader,
+    onboardCard,
+    imgOnboard,
+    mainWrapper,
+    formAskQues,
+    btnAsk,
+    btnClose,
+    queriesContainer,
+    btnYourQueries,
+    btnHelpOtherFolks,
+    mainHeader
+};
