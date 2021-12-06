@@ -20,15 +20,6 @@ const showQuery = ({username, college, query, created_at}, id) => {
  `;
 };
 
-// const getQueriesWhere = (where) => {
-//   db.collection("queries").orderBy("created_at").onSnapshot((snapshot) => {
-//     snapshot.docChanges().forEach((change) => {
-//       if(change.type === "added"){
-//         showQuery(change.doc.data(), change.doc.id);
-//       }
-//     });
-// });
-// }
 
 const clearQueries = () => {
   queriesContainer.innerHTML = "";
