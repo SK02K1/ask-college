@@ -139,6 +139,10 @@ main {
     align-items: center;
 }
 
+#form-ask-ques-wrapper {
+    position: relative;
+}
+
 #form-ask-ques {
     background: var(--blue);
     width: 40%;
@@ -148,6 +152,7 @@ main {
     justify-content: space-evenly;
     padding: 1.2rem 2rem;
     border-radius: 5px;
+    position: absolute;
 }
 
 #form-ask-ques textarea {
