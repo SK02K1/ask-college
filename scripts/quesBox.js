@@ -31,7 +31,19 @@ const submitQues = (e) => {
         e.target.reset();
         setTimeout(() => {
             addQuery(localStorage.username, localStorage.college, query)
-            .then(() => console.log("new query added"))
+            .then(() =>  {
+                Toastify({
+                    text: "query added",
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    },
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true
+                }).showToast();
+            })
             .catch((error) => console.log(error))
             hideLoader();
         }, 800);
