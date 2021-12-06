@@ -37,6 +37,10 @@ small {
     font-size: 2.4rem;
 }
 
+.text-primary {
+    color: var(--peach);
+}
+
 .center {
     position: relative;
     left: 50%;
@@ -174,7 +178,7 @@ small {
 }
 
 .query-card {
-    border: 2px solid var(--blue);
+    border: 2px solid var(--peach);
     border-radius: 5px;
     margin: 1rem auto;
     padding: .5rem;
@@ -182,7 +186,6 @@ small {
 }
 
 .query {
-    color: var(--blue);
     margin: .5rem 0rem;
 }
 
@@ -195,3 +198,9 @@ small {
     display: none;
 }
 
+
+.comment-card {
+    background: #eee;
+    margin: 1rem 0rem;
+    padding: .5rem;
+}
