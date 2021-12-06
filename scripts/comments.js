@@ -1,4 +1,4 @@
-import {hideLoader,showLoader} from "./loader.js";
+import {showLoader} from "./loader.js";
 import {formAddComment} from "./refs.js";
 
 
@@ -14,6 +14,7 @@ const addComment = (e, id) => {
     e.preventDefault();
     const comment = formAddComment.comment.value.trim();
     showLoader();
+    hideCommentBox();
     db.collection("queries").doc(id).update({
         comments: firebase.firestore.FieldValue.arrayUnion({
             username: localStorage.username,
@@ -23,8 +24,6 @@ const addComment = (e, id) => {
         })
     }).then(() => {
         e.target.reset();
-        hideLoader();
-        hideCommentBox();
     }).catch((error) => {
         console.log(error);
     });

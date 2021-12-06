@@ -1,5 +1,5 @@
+import { hideLoader } from "./loader.js";
 import { mainWrapper, queriesContainer, mainHeader } from "./refs.js";
-
 
 let unsub;
 
@@ -38,31 +38,26 @@ const showQuery = ({username, college, query, created_at, comments}, id) => {
  `;
 };
 
-
-// const updateComments = (data, id) => {
-//   const queries = document.querySelectorAll(".query-card");
-//   queries.forEach((queryCard) => {
-//     const dataID = queryCard.getAttribute("data-id");
-//     if(dataID === id){
-//       const comments = queryCard.children[3];
-//       comments.innerHTML = `
-//       ${data.comments.map((comment) => {
-//         return
-//       })}
-//       <div class="comment-card">
-//           <div class="user-info">
-//             <small class="highlight">${username}</small>
-//             <small><span class="highlight">college: </span>${college}</small>
-//           </div>
-//           <div class="comment text-primary">${comment}</div>
-//           <div class="comment text-primary">${comment}</div>
-//             <small>${dateFns.distanceInWordsToNow(new Date(commented_at.toDate()), { addSuffix: true })}</small>
-//           </div>
-//       </div>
-//       `;
-//     }
-//   });
-// };
+const updateComments = (data, id) => {
+  const {username, college, comment, commented_at} = data.comments[data.comments.length - 1];
+  const queries = document.querySelectorAll(".query-card");
+  queries.forEach((queryCard) => {
+    const dataID = queryCard.getAttribute("data-id");
+    if(dataID === id){
+      const comments = queryCard.children[3];
+      comments.innerHTML += `
+      <div class="comment-card">
+        <div class="user-info">
+          <small class="highlight">${username}</small>
+          <small><span class="highlight">college: </span>${college}</small>
+        </div>
+        <div class="comment text-primary">${comment}</div>
+        <small>${dateFns.distanceInWordsToNow(new Date(commented_at.toDate()), { addSuffix: true })}</small>
+      </div>
+      `;
+    }
+  });
+};
 
 const clearQueries = () => {
   queriesContainer.innerHTML = "";
@@ -74,14 +69,12 @@ const getQueries = (heading="Your queries", check="==") => {
     snapshot.docChanges().forEach((change) => {
       if(change.type === "added"){
         showQuery(change.doc.data(), change.doc.id);
+      }else if(change.type === "modified"){
+        setTimeout(() => {
+          hideLoader();
+          updateComments(change.doc.data(), change.doc.id);
+        }, 1200);
       }
-      /*
-      else if(change.type === "modified"){
-        // updateComments(change.doc.data(), change.doc.id);
-        console.log(snapshot.docChanges());
-        console.log("modified");
-      }
-      */
     });
   });
 };
@@ -98,6 +91,5 @@ const showMainContent = () => {
     getQueries();
   }, 0);
 };
-
 
 export {showMainContent, getQueries, unsub, clearQueries};
